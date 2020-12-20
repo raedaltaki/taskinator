@@ -7,10 +7,6 @@ var createTaskHandler = function()
     taskItemE1.textContent = "This is a new task.";
     taskItemE1.className = "task-item";
     tasksToDoEl.appendChild(taskItemE1);
-}
+};
 
-buttonEl.addEventListener("click", createTaskHandler); 
-
-  
-  
- 
+buttonEl.addEventListener("click", createTaskHandler);
