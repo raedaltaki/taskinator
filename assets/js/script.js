@@ -320,58 +320,38 @@ var saveTasks = function()
 
 var loadTasks = function() 
 {
-    tasks = localStorage.getItem("tasks");
+    var savedTasks = localStorage.getItem("tasks");
 
-    if (!tasks)
+    if (!savedTasks)
     {
-        tasks = [];
         return false;
     }
 
-    tasks = JSON.parse(tasks);
-    
+    savedTasks = JSON.parse(savedTasks);
 
-    for (var i = 0; i<tasks.length; i++)
+    // loop through savedTasks array
+    for (var i = 0; i < savedTasks.length; i++) 
     {
-        taskIdCounter = tasks[i].id;
+        // pass each task object into the `createTaskEl()` function
+        createTaskEl(savedTasks[i]);
+        
+        var el = document.querySelector(".task-item[data-task-id='" + savedTasks[i].id + "']");
+        console.dir(el);
 
-        // create list item
-        var listItemEl = document.createElement("li");
-        listItemEl.className = "task-item";
-
-        // add task id as a custom attribute
-        listItemEl.setAttribute("data-task-id", taskIdCounter);
-        listItemEl.setAttribute("draggable","true");
-
-        // create div to hold task info and add to list item
-        var taskInfoEl = document.createElement("div");
-        taskInfoEl.className = "task-info";
-
-        // add HTML content to div
-        taskInfoEl.innerHTML = "<h3 class='task-name'>" + tasks[i].name + "</h3><span class='task-type'>" + tasks[i].type + "</span>";
-        listItemEl.appendChild(taskInfoEl);
-
-        var taskActionsEl = createTaskActions(taskIdCounter);
-        listItemEl.appendChild(taskActionsEl);
-
-        // add entire list item to list
-        if (tasks[i].status === "to do") 
+        if (savedTasks[i].status === "to do") 
         {
-            tasksToDoEl.appendChild(listItemEl);
+            tasksToDoEl.appendChild(el);
         } 
-        else if (tasks[i].status === "in progress") 
+        else if (savedTasks[i].status === "in progress") 
         {
-            tasksInProgressEl.appendChild(listItemEl);
+            tasksInProgressEl.appendChild(el);
         } 
-        else if (tasks[i].status === "completed") 
+        else if (savedTasks[i].status === "completed") 
         {
-            tasksCompletedEl.appendChild(listItemEl);
+            tasksCompletedEl.appendChild(el);
         }
-
-        // increase task counter for next unique id
-        taskIdCounter++;
-
     }
+
 }
 
 
