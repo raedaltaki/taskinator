@@ -19,8 +19,7 @@ Please visit our completed webpage at:  https://raedaltaki.github.io/taskinator/
 
 ## Description
 
-taskinator is a task managment Application that helps you organize your tasks based on their status
-
+taskinator is a task management Application that helps you organize your tasks based on their status
 
 ## Installation
 
