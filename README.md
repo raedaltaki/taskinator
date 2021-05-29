@@ -30,7 +30,7 @@ If you want to use it to make your own project:
 ```
 // Clone the repository to your local machine using:
 
-git clone git@github.com:raedaltaki/taskmaster-pro.git
+git clone git@github.com:raedaltaki/taskinator.git
 ```
 
 ## Usage
