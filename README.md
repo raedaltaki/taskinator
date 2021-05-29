@@ -19,7 +19,7 @@ Please visit our completed webpage at:  https://raedaltaki.github.io/taskinator/
 
 ## Description
 
-taskmaster-pro is a task managment Application that helps you organize your tasks based on their status and time
+taskinator is a task managment Application that helps you organize your tasks based on their status
 
 
 ## Installation
